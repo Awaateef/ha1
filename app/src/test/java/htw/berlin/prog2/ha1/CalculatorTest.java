@@ -115,6 +115,23 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("gibt Intger comma null")
+    void testkey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(6);
+        calc.pressDotKey();
+        calc.pressDigitKey(0);
+
+
+        calc.pressEqualsKey();
+
+        String expected = "6" ;
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 
 }
 
