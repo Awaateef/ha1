@@ -12,7 +12,7 @@ public class Calculator {
 
     private double latestValue;
 
-    private String latestOperation = "";
+    private String latestOperation = "A";
 
     /**
      * @return den aktuellen Bildschirminhalt als String
@@ -123,6 +123,9 @@ public class Calculator {
             case "-" -> latestValue - Double.parseDouble(screen);
             case "x" -> latestValue * Double.parseDouble(screen);
             case "/" -> latestValue / Double.parseDouble(screen);
+            case "A" -> Double.parseDouble(screen);
+
+
             default -> throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
