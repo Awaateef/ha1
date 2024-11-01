@@ -89,6 +89,32 @@ class CalculatorTest {
     }
 
 
-    //TODO hier weitere Tests erstellen
+
+
+
+
+
+
+
+    @Test
+    @DisplayName(" zwei operation")
+    void testMultiplOpp() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(4);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(9);
+
+        calc.pressEqualsKey();
+
+        String expected = "11" ;
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
 
